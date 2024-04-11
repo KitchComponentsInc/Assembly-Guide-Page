@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    .assembly-guides {
+      /* max-width: 1200px; */
+      font-size: 16px;
+      min-width: 240px;
+    }
+
+    h2,
+    h3,
+    label,
+    .assembly-guide-header {
+      font-family: var(--FONT-STACK-BODY) !important;
+      font-style: var(--FONT-STYLE-BODY);
+      font-weight: var(--FONT-WEIGHT-BODY);
+      letter-spacing: var(--FONT-BODY-LETTER-SPACING);
+      text-transform: var(--FONT-BODY-TRANSFORM);
+      line-height: var(--leading-normal);
+      cursor: default;
+    }
+
+    h2,
+    .search-wrapper {
+      align-self: center;
+    }
+
+    .assembly-guides h4 {
+      font-family: var(--FONT-STACK-ACCENT) !important;
+      font-style: var(--FONT-STYLE-ACCENT);
+      font-weight: var(--FONT-WEIGHT-ACCENT-BOLD);
+      text-transform: var(--FONT-ACCENT-TRANSFORM);
+      letter-spacing: var(--FONT-ACCENT-LETTER-SPACING);
+      font-size: calc(var(--font-5) * var(--FONT-ADJUST-BODY));
+      line-height: var(--leading-normal);
+      margin: 0;
+    }
+
+    .assembly-guides-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .search-wrapper {
+      min-width: 247px;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #777;
+    }
+
+    .search-wrapper label {
+      height: 28px;
+      width: 28px;
+    }
+
+    .search-wrapper label img {
+      width: 100%;
+    }
+
+    .assembly-guides input,
+    .assembly-guides input:focus {
+      appearance: none;
+      padding-inline: 0px;
+      font-size: 1rem;
+      border: 0px white;
+      outline: none;
+    }
+
+    /* Clear search is hidden */
+    .assembly-guides input[type="search"]::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+
+    .assembly-guides input::-ms-clear {
+      display: none;
+    }
+
+    .assembly-guide-cards {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      margin-top: 1rem;
+      transition: all 0.33s;
+    }
+
+    .assembly-guide-cards .card:nth-child(2n) {
+      background-color: #f7f7f7;
+      transition: all 0.33s;
+    }
+
+    .assembly-guide-cards .card:nth-child(2n):hover {
+      background-color: #e8e8e8;
+    }
+
+    .assembly-guide-cards .card .download-icon {
+      transition: all 0.33s;
+    }
+    
+    .assembly-guide-cards .card:nth-child(2n) .download-icon {
+      background-color: white;
+    }
+    
+    .assembly-guide-cards .card:nth-child(2n):hover .download-icon {
+      background-color: #b1e4e3;
+      width: 40px;
+    }
+    
+    .card {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 40px;
+      height: fit-content;
+      box-sizing: border-box;
+      padding: 0px 16px;
+      border-radius: 20px;
+    }
+    
+    .card:hover {
+      transition: all 0.33s;
+      background-color: #e8e8e8;
+    }
+
+    .card .assembly-guide-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .card .file-name-wrapper {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .card .file-name-wrapper img {
+      width: auto;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .card > .assembly-guide-body {
+      font-size: var(--font-4);
+      color: black;
+    }
+
+    .card > .assembly-guide-body a:-webkit-any-link {
+      color: black;
+    }
+
+    .card .download-icon {
+      background-color: #e4e4e4;
+      display: flex;
+      height: 32px;
+      width: 32px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+    }
+
+    .card:hover .download-icon {
+      background-color: #b1e4e3;
+      width: 40px;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <section class="assembly-guides">
+      <div class="assembly-guides-wrapper">
+        <h2>Assembly Guides</h2>
+        <div class="search-wrapper">
+          <label for="search">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0639/8686/0263/files/search.png?v=1710947889"
+            />
+          </label>
+          <input
+            type="search"
+            id="search"
+            data-search
+            placeholder="Search Assembly Guides"
+          />
+        </div>
+        <div class="category">
+          <h3>Standard Assembly Guides</h3>
+          <div
+            class="assembly-guide-cards"
+            data-standard-assembly-guide-cards-container
+          ></div>
+        </div>
+        <div class="category">
+          <h3>30" Height Configurations</h3>
+          <div
+            class="assembly-guide-cards"
+            data-30-high-assembly-guide-cards-container
+          ></div>
+        </div>
+        <div class="category">
+          <h3>25" Height Configurations</h3>
+          <div
+            class="assembly-guide-cards"
+            data-25-high-assembly-guide-cards-container
+          ></div>
+        </div>
+        <div class="category">
+          <h3>20" Height Configurations</h3>
+          <div
+            class="assembly-guide-cards"
+            data-20-high-assembly-guide-cards-container
+          ></div>
+        </div>
+        <div class="category">
+          <h3>Standard Installation Guides</h3>
+          <div
+            class="assembly-guide-cards"
+            data-standard-installation-guide-cards-container
+          ></div>
+        </div>
+        <template data-assembly-guide-template>
+          <div class="card">
+            <div class="assembly-guide-header" data-assembly-guide-header></div>
+            <div class="assembly-guide-body" data-assembly-guide-body></div>
+          </div>
+        </template>
+      </div>
+    </section>
+    <script defer>
+      const assemblyGuideCardTemplate = document.querySelector(
+        "[data-assembly-guide-template]"
+      );
+      const standardAssemblyGuideCardContainer = document.querySelector(
+        "[data-standard-assembly-guide-cards-container]"
+      );
+      const assemblyGuideCardContainer30High = document.querySelector(
+        "[data-30-high-assembly-guide-cards-container]"
+      );
+      const assemblyGuideCardContainer25High = document.querySelector(
+        "[data-25-high-assembly-guide-cards-container]"
+      );
+      const assemblyGuideCardContainer20High = document.querySelector(
+        "[data-20-high-assembly-guide-cards-container]"
+      );
+      const standardInstallationGuideCardContainer = document.querySelector(
+        "[data-standard-installation-guide-cards-container]"
+      );
+      const searchInput = document.querySelector("[data-search]");
+
+      let assemblyGuides = [
+        // STANDARD ASSEMBLY GUIDES
+        {
+          category: "standard",
+          name: "BASEBOX",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-PRODUCT_2024.png?v=1712856098",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX.pdf?v=1712769525",
+        },
+        {
+          category: "standard",
+          name: "TALLBOX",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/TallBOX-PRODUCT_2024.png?v=1712856141",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/TallBOX.pdf?v=1712770085",
+        },
+        {
+          category: "standard",
+          name: "WALLBOX",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WallBOX-PRODUCT_2024.png?v=1712856179",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WallBOX.pdf?v=1712771618",
+        },
+        // {
+        //   category: "standard",
+        //   name: "DRAWERBOX",
+        //   imageRef:
+        //     "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX-PRODUCT_2024.png?v=1712856218",
+        //   fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX_Assembly_Guide.pdf?v=1712772284",
+        // },
+        {
+          category: "standard",
+          name: "OPEN CABINET",
+          imageRef:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Open_Cabinet_15.png?v=1712856321",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Open_Cabinet.pdf?v=1712772269",
+        },
+
+        //BASEBOX 30" HEIGHT CONFIGURATIONS
+        {
+          category: "30-high",
+          name: "B302DREE",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-2DR-EE_AJAR.png?v=1712856459",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B302DREE.pdf?v=1709316084",
+        },
+        {
+          category: "30-high",
+          name: "B302DRHB",
+          imageRef:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-2DR-HB_AJAR.png?v=1712856492",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B302DRHB.pdf?v=1709316132",
+        },
+        {
+          category: "30-high",
+          name: "B302DRIA",
+          imageRef:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-2DR-IA_AJAR.png?v=1712856525",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B302DRIA.pdf?v=1709316147",
+        },
+        {
+          category: "30-high",
+          name: "B302DRIEE",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-2DRI-EE_AJAR.png?v=1712856554",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B302DRIEE.pdf?v=1709316157",
+        },
+        {
+          category: "30-high",
+          name: "B303DRCCC",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-3DR-CCC_AJAR.png?v=1712856634",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B303DRCCC.pdf?v=1709316172",
+        },
+        {
+          category: "30-high",
+          name: "B303DRDCB",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-3DR-DCB_AJAR.png?v=1712856666",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B303DRDCB.pdf?v=1709316186",
+        },
+        {
+          category: "30-high",
+          name: "B303DRDDA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-3DR-DDA_AJAR.png?v=1712856698",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B303DRDDA.pdf?v=1709316197",
+        },
+        {
+          category: "30-high",
+          name: "B303DREBB",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-3DR-EBB_AJAR.png?v=1712856741",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B303DREBB.pdf?v=1709316207",
+        },
+        {
+          category: "30-high",
+          name: "B303DRECA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-3DR-ECA_AJAR.png?v=1712856858",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B303DRECA.pdf?v=1709316217",
+        },
+        {
+          category: "30-high",
+          name: "B303DRGAA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-3DR-GAA_AJAR.png?v=1712857242",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B303DRGAA.pdf?v=1709316229",
+        },
+        {
+          category: "30-high",
+          name: "B303DRICCC",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30-3DR-CCCI_AJAR.png?v=1712857296",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B303DRICCC.pdf?v=1709316239",
+        },
+        {
+          category: "30-high",
+          name: "BR30J",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30_Recyclage-J_AJAR.png?v=1712857329",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BR30J.pdf?v=1709315797",
+        },
+        {
+          category: "30-high",
+          name: "B305DRCAAA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B305DRCAAAA.png?v=1712857361",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B305DRCAAA.pdf?v=1711470534",
+        },
+        {
+          category: "30-high",
+          name: "BBC30DOJ & BBC30DOJS",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BBC-PO_LHS_AJAR.png?v=1712857443",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BBC30DOJ_BBC30DOJS.pdf?v=1712783675",
+        },
+        {
+          category: "30-high",
+          name: "B302DRGC",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B302DRGC.png?v=1712857477",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B302DRGC.pdf?v=1712675101",
+        },
+
+        //BASEBOX 25" HEIGHT CONFIGURATIONS
+        {
+          category: "25-high",
+          name: "B253DRCCA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B253DRCCA.png?v=1712857520",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B253DRCCA.pdf?v=1709838421",
+        },
+        {
+          category: "25-high",
+          name: "B252DREC",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B252DREC.png?v=1712857555",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B252DREC.pdf?v=1709838421",
+        },
+        {
+          category: "25-high",
+          name: "B252DRGA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B252DRGA.png?v=1712857590",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B252DRGA.pdf?v=1709838421",
+        },
+        {
+          category: "25-high",
+          name: "B253DREAA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B253DREAA.png?v=1712857608",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B253DREAA.pdf?v=1709838421",
+        },
+        {
+          category: "25-high",
+          name: "BS25DRDOCE & BS25DR2DOCE",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BS25DRDOCE.png?v=1712857634",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BS25DRDOCE_BS25DR2DOCE.pdf?v=1709838421",
+        },
+        {
+          category: "25-high",
+          name: "B25DOGAS & B252DOGAS",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B25DOGAS.png?v=1712857675",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B25DOGAS_B252DOGAS.pdf?v=1712252884",
+        },
+
+        //BASEBOX 20" HEIGHT CONFIGURATIONS
+        {
+          category: "20-high",
+          name: "B202DRSCC",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-20-2DRS-CC_AJAR.png?v=1712858370",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B202DRSCC.pdf?v=1709653896",
+        },
+        {
+          category: "20-high",
+          name: "B202DRCC",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-20-2DR-CC_AJAR.png?v=1712858413",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B202DRCC.pdf?v=1709653936",
+        },
+        {
+          category: "20-high",
+          name: "B202DREA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-20-2DR-EA_AJAR.png?v=1712858448",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B202DREA.pdf?v=1709653979",
+        },
+        {
+          category: "20-high",
+          name: "B20DODREA & B202DODREA",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-20-DODR-EA_AJAR.png?v=1712858482",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B20DODREA_B202DODREA.pdf?v=1709653908",
+        },
+        
+        //INSTALLATION GUIDES
+        // {
+        //   category: "installation",
+        //   name: "DRAWERBOX",
+        //   imageRef:
+        //     "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX-PRODUCT_2024.png?v=1712856218",
+        //   fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX_Installation_Guide.pdf?v=1685629217",
+        // },
+        // {
+        //   category: "installation",
+        //   name: "INNER DRAWERBOX",
+        //   imageRef:
+        //     "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_DrawerBOX-PRODUCT_2024.png?v=1712857847",
+        //   fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_DrawerBOX.pdf?v=1712772288",
+        // },
+        {
+          category: "installation",
+          name: "APPLIED PANEL",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Applied_Panel_1_5-PRODUCT_2024.png?v=1712857908",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Applied_Panel.pdf?v=1712772272",
+        },
+        {
+          category: "installation",
+          name: "FLOATING SHELF",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Floating_Shelf.png?v=1712857962",
+          fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Floating_Shelf.pdf?v=1712772275",
+        },
+      ];
+
+
+      function checkCategoryVisibility(categoryContainer) {
+        const cards = categoryContainer.querySelectorAll(".card:not(.hide)");
+        const categoryDiv = categoryContainer.parentElement;
+
+        if (cards.length === 0) {
+          categoryDiv.classList.add("hide");
+        } else {
+          categoryDiv.classList.remove("hide");
+        }
+      }
+
+      searchInput.addEventListener("input", (e) => {
+        const value = e.target.value.toLowerCase();
+        assemblyGuides.forEach((guide) => {
+          const isVisible = guide.name.toLowerCase().includes(value);
+          if (guide.card) {
+            // Check if guide.card is defined
+            guide.card.classList.toggle("hide", !isVisible);
+          }
+        });
+
+        // Check visibility for each category
+        checkCategoryVisibility(standardAssemblyGuideCardContainer);
+        checkCategoryVisibility(assemblyGuideCardContainer30High);
+        checkCategoryVisibility(assemblyGuideCardContainer25High);
+        checkCategoryVisibility(assemblyGuideCardContainer20High);
+        checkCategoryVisibility(standardInstallationGuideCardContainer);
+      });
+
+      assemblyGuides.forEach((guide) => {
+        var fileNameWrapper = document.createElement("div");
+        fileNameWrapper.className = "file-name-wrapper";
+        var fileName = document.createElement("h4");
+        var imageRef = document.createElement("img");
+
+        var pdfFile = document.createElement("a");
+        var downloadIcon = document.createElement("img");
+
+        const card = assemblyGuideCardTemplate.content.cloneNode(true).children[0];
+        const enlargeImageWrapper = card.querySelector("[data-enlarge-image-wrapper]");
+        const assemblyGuideHeader = card.querySelector("[data-assembly-guide-header]");
+        const assemblyGuideBody = card.querySelector("[data-assembly-guide-body]");
+
+        imageRef.src = guide.imageRef;
+        fileName.textContent = guide.name;
+        assemblyGuideHeader.appendChild(fileNameWrapper);
+        fileNameWrapper.appendChild(imageRef);
+        fileNameWrapper.appendChild(fileName);
+
+        pdfFile.setAttribute("href", `${guide.fileUrl}`);
+        pdfFile.setAttribute("target", "_blank");
+        pdfFile.setAttribute("class", "download-icon");
+
+        downloadIcon.src = "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Download-Icon.png?v=1712692326";
+
+        pdfFile.download = "myfile.pdf";
+
+        // pdfFile.innerText = "Downloadable PDF.";
+        pdfFile.appendChild(downloadIcon);
+        assemblyGuideBody.appendChild(pdfFile);
+
+        if (guide.category === "standard") {
+          standardAssemblyGuideCardContainer.append(card);
+        } else if (guide.category === "30-high") {
+          assemblyGuideCardContainer30High.append(card);
+        } else if (guide.category === "25-high") {
+          assemblyGuideCardContainer25High.append(card);
+        } else if (guide.category === "20-high") {
+          assemblyGuideCardContainer20High.append(card);
+        } else if (guide.category === "installation") {
+          standardInstallationGuideCardContainer.append(card);
+        }
+
+        guide.card = card;
+
+      });
+    </script>
+  </body>
+</html>
