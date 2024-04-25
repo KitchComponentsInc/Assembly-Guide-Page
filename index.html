@@ -6,6 +6,7 @@
     max-width: 1200px;
     font-size: 16px;
     min-width: 240px;
+    margin: 0 auto;
   }
 
   h2,
@@ -223,6 +224,20 @@
       ></div>
     </div>
     <div class="category">
+      <h3>15" Height Configurations</h3>
+      <div
+        data-15-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
+    <div class="category">
+      <h3>10" Height Configurations</h3>
+      <div
+        data-10-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
+    <div class="category">
       <h3>Standard Installation Guides</h3>
       <div
         data-standard-installation-guide-cards-container=""
@@ -261,13 +276,19 @@
   const assemblyGuideCardContainer20High = document.querySelector(
     "[data-20-high-assembly-guide-cards-container]"
   );
+  const assemblyGuideCardContainer15High = document.querySelector(
+    "[data-15-high-assembly-guide-cards-container]"
+  );
+  const assemblyGuideCardContainer10High = document.querySelector(
+    "[data-10-high-assembly-guide-cards-container]"
+  );
   const standardInstallationGuideCardContainer = document.querySelector(
     "[data-standard-installation-guide-cards-container]"
   );
   const searchInput = document.querySelector("[data-search]");
 
   let assemblyGuides = [
-// ------------------ STANDARD ASSEMBLY GUIDES ------------------
+/*  ------------------ STANDARD ASSEMBLY GUIDES ------------------ */
     {
       category: "standard",
       name: "BASEBOX",
@@ -323,7 +344,7 @@
         alt: "Assembly Guide",
     },
 
-// ------------------ BASEBOX 30" HEIGHT CONFIGURATIONS ------------------
+/*  ------------------ 30" HEIGHT CONFIGURATIONS ------------------ */
     {
       category: "30-high",
       name: "B302DREE",
@@ -505,7 +526,7 @@
         alt: "Assembly Guide",
     },
 
-// ------------------ BASEBOX 25" HEIGHT CONFIGURATIONS ------------------
+/*  ------------------ 25" HEIGHT CONFIGURATIONS ------------------ */
     {
       category: "25-high",
       name: "B253DRCCA",
@@ -579,7 +600,7 @@
         alt: "Assembly Guide",
     },
 
-// ------------------ BASEBOX 20" HEIGHT CONFIGURATIONS ------------------
+/*  ------------------ 20" HEIGHT CONFIGURATIONS ------------------ */
     {
       category: "20-high",
       name: "BS202DRCC",
@@ -616,22 +637,37 @@
         "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B20DODREA_B202DODREA.pdf?v=1712931969",
         alt: "Assembly Guide",
     },
+    {
+      category: "20-high",
+      name: "WHDO20GS",
+      imageRef:
+        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WHDO20GS.png?v=1714078364",
+      fileUrl:
+        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WHDO10C_WHDO15E_WHDO20GS.pdf?v=1714078259",
+        alt: "Assembly Guide",
+    },
+/*  ------------------ 15" HEIGHT CONFIGURATIONS ------------------ */
+    {
+      category: "15-high",
+      name: "WHDO15E",
+      imageRef:
+        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WHDO15E.png?v=1714079120",
+      fileUrl:
+        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WHDO10C_WHDO15E_WHDO20GS.pdf?v=1714078259",
+        alt: "Assembly Guide",
+    },
+/*  ------------------ 10" HEIGHT CONFIGURATIONS ------------------  */
+    {
+      category: "10-high",
+      name: "WHDO10C",
+      imageRef:
+        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WHDO10C.png?v=1714079140",
+      fileUrl:
+        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WHDO10C_WHDO15E_WHDO20GS.pdf?v=1714078259",
+        alt: "Assembly Guide",
+    },
 
-// ------------------ INSTALLATION GUIDES ------------------
-    // {
-    //   category: "installation",
-    //   name: "DRAWERBOX",
-    //   imageRef:
-    //     "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX-PRODUCT_2024.png?v=1712856218",
-    //   fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX_Installation_Guide.pdf?v=1685629217",
-    // },
-    // {
-    //   category: "installation",
-    //   name: "INNER DRAWERBOX",
-    //   imageRef:
-    //     "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_DrawerBOX-PRODUCT_2024.png?v=1712857847",
-    //   fileUrl:"https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_DrawerBOX.pdf?v=1712772288",
-    // },
+/*  ------------------ INSTALLATION GUIDES ------------------ */
     {
       category: "installation",
       name: "APPLIED PANEL",
@@ -678,6 +714,8 @@
     checkCategoryVisibility(assemblyGuideCardContainer30High);
     checkCategoryVisibility(assemblyGuideCardContainer25High);
     checkCategoryVisibility(assemblyGuideCardContainer20High);
+    checkCategoryVisibility(assemblyGuideCardContainer15High);
+    checkCategoryVisibility(assemblyGuideCardContainer10High);
     checkCategoryVisibility(standardInstallationGuideCardContainer);
   });
 
@@ -701,7 +739,6 @@
 
     imageRef.src = guide.imageRef;
     imageRef.setAttribute("alt", `${guide.name} ${guide.alt}`);
-    /* imageRef.setAttribute("onclick", `${window.open(guide.imageRef, '_blank')}`); */
     imageRef.setAttribute("onclick", `window.open('${guide.imageRef}', '_blank')`);
     imageRef.setAttribute("title", `Preview ${guide.name} in new tab`);
     fileName.textContent = guide.name;
@@ -713,8 +750,7 @@
     pdfFile.setAttribute("target", "_blank");
     pdfFile.setAttribute("class", "download-icon");
 
-    downloadIcon.src =
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Download-Icon.png?v=1712692326";
+    downloadIcon.src = "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Download-Icon.png?v=1712692326";
 
     pdfFile.appendChild(downloadIcon);
     assemblyGuideBody.appendChild(pdfFile);
@@ -727,6 +763,10 @@
       assemblyGuideCardContainer25High.append(card);
     } else if (guide.category === "20-high") {
       assemblyGuideCardContainer20High.append(card);
+    } else if (guide.category === "15-high") {
+      assemblyGuideCardContainer15High.append(card);
+    } else if (guide.category === "10-high") {
+      assemblyGuideCardContainer10High.append(card);
     } else if (guide.category === "installation") {
       standardInstallationGuideCardContainer.append(card);
     }
