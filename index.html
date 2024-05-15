@@ -147,12 +147,12 @@
     cursor: pointer;
   }
 
-  .card>.assembly-guide-body {
+  .card > .assembly-guide-body {
     font-size: var(--font-4);
     color: black;
   }
 
-  .card>.assembly-guide-body a:-webkit-any-link {
+  .card > .assembly-guide-body a:-webkit-any-link {
     color: black;
   }
 
@@ -200,17 +200,17 @@
         />
       </label>
       <input
-      placeholder="Search Assembly Guides"
-      data-search=""
-      id="search"
-      type="search"
+        placeholder="Search Assembly Guides"
+        data-search=""
+        id="search"
+        type="search"
       />
     </div>
     <div class="category">
       <h3 id="standard-assembly-guides">Standard Assembly Guides</h3>
       <div
-      data-standard-assembly-guide-cards-container=""
-      class="assembly-guide-cards"
+        data-standard-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
       ></div>
     </div>
     <div class="category">
@@ -221,23 +221,9 @@
       ></div>
     </div>
     <div class="category">
-      <h3 id="30-in-high">30" Height Configurations</h3>
+      <h3 id="10-in-high">10" Height Configurations</h3>
       <div
-        data-30-high-assembly-guide-cards-container=""
-        class="assembly-guide-cards"
-      ></div>
-    </div>
-    <div class="category">
-      <h3 id="25-in-high">25" Height Configurations</h3>
-      <div
-        data-25-high-assembly-guide-cards-container=""
-        class="assembly-guide-cards"
-      ></div>
-    </div>
-    <div class="category">
-      <h3 id="20-in-high">20" Height Configurations</h3>
-      <div
-        data-20-high-assembly-guide-cards-container=""
+        data-10-high-assembly-guide-cards-container=""
         class="assembly-guide-cards"
       ></div>
     </div>
@@ -249,9 +235,23 @@
       ></div>
     </div>
     <div class="category">
-      <h3 id="10-in-high">10" Height Configurations</h3>
+      <h3 id="20-in-high">20" Height Configurations</h3>
       <div
-        data-10-high-assembly-guide-cards-container=""
+        data-20-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
+    <div class="category">
+      <h3 id="25-in-high">25" Height Configurations</h3>
+      <div
+        data-25-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
+    <div class="category">
+      <h3 id="30-in-high">30" Height Configurations</h3>
+      <div
+        data-30-high-assembly-guide-cards-container=""
         class="assembly-guide-cards"
       ></div>
     </div>
@@ -350,7 +350,10 @@
 
     imageRef.src = guide.imageRef;
     imageRef.setAttribute("alt", `${guide.name} ${guide.alt}`);
-    imageRef.setAttribute("onclick", `window.open('${guide.imageRef}', '_blank')`);
+    imageRef.setAttribute(
+      "onclick",
+      `window.open('${guide.imageRef}', '_blank')`
+    );
     imageRef.setAttribute("title", `Preview ${guide.name} in new tab`);
     fileName.textContent = guide.name;
     assemblyGuideHeader.appendChild(fileNameWrapper);
@@ -361,7 +364,8 @@
     pdfFile.setAttribute("target", "_blank");
     pdfFile.setAttribute("class", "download-icon");
 
-    downloadIcon.src = "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Download-Icon.png?v=1712692326";
+    downloadIcon.src =
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Download-Icon.png?v=1712692326";
 
     pdfFile.appendChild(downloadIcon);
     assemblyGuideBody.appendChild(pdfFile);
@@ -383,6 +387,5 @@
     }
 
     guide.card = card;
-
   });
 </script>
