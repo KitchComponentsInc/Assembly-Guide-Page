@@ -56,11 +56,20 @@ let assemblyGuides = [
         },
         {
           category: "standard",
-          name: "WALLBOX ASSEMBLY GUIDE",
+          name: "WALLBOX",
           imageRef:
             "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WallBOX-PRODUCT_2024.png?v=1712856179",
           fileUrl:
             "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WallBOX_Assembly_Guide.pdf?v=1715799748",
+            alt: "Assembly Guide",
+        },
+        {
+          category: "standard",
+          name: "WALL BLIND CORNER CONFIGURATIONS",
+          imageRef:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC30DOJ2S_done.png?v=1715812176",
+          fileUrl:
+            "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1715811935",
             alt: "Assembly Guide",
         },
     
