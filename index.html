@@ -185,15 +185,6 @@
 <section class="assembly-guides">
   <div class="assembly-guides-wrapper">
     <h2>Assembly Guides</h2>
-    <!-- <div class="jump-to">
-      <a href="#standard-assembly-guides" class="button">Standard Assembly Guides</a>
-      <a href="#standard-installation-guides" class="button">Standard Installation Guide</a>
-      <a href="#30-in-high" class="button">30" Height Configurations</a>
-      <a href="#25-in-high" class="button">25" Height Configurations</a>
-      <a href="#20-in-high" class="button">20" Height Configurations</a>
-      <a href="#15-in-high" class="button">15" Height Configurations</a>
-      <a href="#10-in-high" class="button">10" Height Configurations</a>
-    </div> -->
     <div class="search-wrapper">
       <label for="search">
         <img
@@ -256,6 +247,34 @@
         class="assembly-guide-cards"
       ></div>
     </div>
+    <div class="category">
+      <h3 id="35-in-high">35" Height Configurations</h3>
+      <div
+        data-35-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
+    <div class="category">
+      <h3 id="40-in-high">40" Height Configurations</h3>
+      <div
+        data-40-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
+    <div class="category">
+      <h3 id="50-in-high">50" Height Configurations</h3>
+      <div
+        data-50-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
+    <div class="category">
+      <h3 id="60-in-high">60" Height Configurations</h3>
+      <div
+        data-60-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
     <template data-assembly-guide-template="">
       <div class="card">
         <div
@@ -272,7 +291,7 @@
     </template>
   </div>
 </section>
-<script src="https://cdn.shopify.com/s/files/1/0639/8686/0263/files/main_007c093d-6ab4-402a-a0d1-2100c7813a34.js?v=1715812276"></script>
+<script src="https://cdn.shopify.com/s/files/1/0639/8686/0263/files/main_6bf31f26-0c6e-4919-b01b-d673dd029d77.js?v=1715876309"></script>
 <script defer="">
   const assemblyGuideCardTemplate = document.querySelector(
     "[data-assembly-guide-template]"
@@ -280,23 +299,35 @@
   const standardAssemblyGuideCardContainer = document.querySelector(
     "[data-standard-assembly-guide-cards-container]"
   );
-  const assemblyGuideCardContainer30High = document.querySelector(
-    "[data-30-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer25High = document.querySelector(
-    "[data-25-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer20High = document.querySelector(
-    "[data-20-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer15High = document.querySelector(
-    "[data-15-high-assembly-guide-cards-container]"
+  const standardInstallationGuideCardContainer = document.querySelector(
+    "[data-standard-installation-guide-cards-container]"
   );
   const assemblyGuideCardContainer10High = document.querySelector(
     "[data-10-high-assembly-guide-cards-container]"
   );
-  const standardInstallationGuideCardContainer = document.querySelector(
-    "[data-standard-installation-guide-cards-container]"
+  const assemblyGuideCardContainer15High = document.querySelector(
+    "[data-15-high-assembly-guide-cards-container]"
+  );
+  const assemblyGuideCardContainer20High = document.querySelector(
+    "[data-20-high-assembly-guide-cards-container]"
+  );
+  const assemblyGuideCardContainer25High = document.querySelector(
+    "[data-25-high-assembly-guide-cards-container]"
+  );
+  const assemblyGuideCardContainer30High = document.querySelector(
+    "[data-30-high-assembly-guide-cards-container]"
+  );
+  const assemblyGuideCardContainer35High = document.querySelector(
+    "[data-35-high-assembly-guide-cards-container]"
+  );
+  const assemblyGuideCardContainer40High = document.querySelector(
+    "[data-40-high-assembly-guide-cards-container]"
+  );
+  const assemblyGuideCardContainer50High = document.querySelector(
+    "[data-50-high-assembly-guide-cards-container]"
+  );
+  const assemblyGuideCardContainer60High = document.querySelector(
+    "[data-60-high-assembly-guide-cards-container]"
   );
   const searchInput = document.querySelector("[data-search]");
 
@@ -323,11 +354,15 @@
 
     // Check visibility for each category
     checkCategoryVisibility(standardAssemblyGuideCardContainer);
-    checkCategoryVisibility(assemblyGuideCardContainer30High);
-    checkCategoryVisibility(assemblyGuideCardContainer25High);
-    checkCategoryVisibility(assemblyGuideCardContainer20High);
-    checkCategoryVisibility(assemblyGuideCardContainer15High);
     checkCategoryVisibility(assemblyGuideCardContainer10High);
+    checkCategoryVisibility(assemblyGuideCardContainer15High);
+    checkCategoryVisibility(assemblyGuideCardContainer20High);
+    checkCategoryVisibility(assemblyGuideCardContainer25High);
+    checkCategoryVisibility(assemblyGuideCardContainer30High);
+    checkCategoryVisibility(assemblyGuideCardContainer35High);
+    checkCategoryVisibility(assemblyGuideCardContainer40High);
+    checkCategoryVisibility(assemblyGuideCardContainer50High);
+    checkCategoryVisibility(assemblyGuideCardContainer60High);
     checkCategoryVisibility(standardInstallationGuideCardContainer);
   });
 
@@ -373,16 +408,24 @@
 
     if (guide.category === "standard") {
       standardAssemblyGuideCardContainer.append(card);
-    } else if (guide.category === "30-high") {
-      assemblyGuideCardContainer30High.append(card);
-    } else if (guide.category === "25-high") {
-      assemblyGuideCardContainer25High.append(card);
-    } else if (guide.category === "20-high") {
-      assemblyGuideCardContainer20High.append(card);
-    } else if (guide.category === "15-high") {
-      assemblyGuideCardContainer15High.append(card);
     } else if (guide.category === "10-high") {
       assemblyGuideCardContainer10High.append(card);
+    } else if (guide.category === "15-high") {
+      assemblyGuideCardContainer15High.append(card);
+    } else if (guide.category === "20-high") {
+      assemblyGuideCardContainer20High.append(card);
+    } else if (guide.category === "25-high") {
+      assemblyGuideCardContainer25High.append(card);
+    } else if (guide.category === "30-high") {
+      assemblyGuideCardContainer30High.append(card);
+    } else if (guide.category === "35-high") {
+      assemblyGuideCardContainer35High.append(card);
+    } else if (guide.category === "40-high") {
+      assemblyGuideCardContainer40High.append(card);
+    } else if (guide.category === "50-high") {
+      assemblyGuideCardContainer50High.append(card);
+    } else if (guide.category === "60-high") {
+      assemblyGuideCardContainer60High.append(card);
     } else if (guide.category === "installation") {
       standardInstallationGuideCardContainer.append(card);
     }
