@@ -60,7 +60,16 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Sink_DrawerBOX_2024.png?v=1716496144",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Sink_DrawerBOX.pdf?v=1716496043",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Sink_DrawerBOX.pdf?v=1716932303",
+    alt: "Assembly Guide",
+  },
+  {
+    category: "standard",
+    name: "Inner Sink DrawerBOX",
+    imageRef:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Sink_Inner_DrawerBOX_2024.png?v=1716932959",
+    fileUrl:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_Sink_DrawerBOX.pdf?v=1716932273",
     alt: "Assembly Guide",
   },
 
