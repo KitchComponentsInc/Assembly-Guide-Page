@@ -20,6 +20,15 @@ let assemblyGuides = [
   },
   {
     category: "standard",
+    name: "WALLBOX",
+    imageRef:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WallBOX-PRODUCT_2024.png?v=1712856179",
+    fileUrl:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WallBOX_Assembly_Guide.pdf?v=1715799748",
+    alt: "Assembly Guide",
+  },
+  {
+    category: "standard",
     name: "DRAWERBOX",
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX-PRODUCT_2024.png?v=1712856218",
@@ -43,15 +52,6 @@ let assemblyGuides = [
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Open_Cabinet_15.png?v=1712856321",
     fileUrl:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Open_Cabinet.pdf?v=1712772269",
-    alt: "Assembly Guide",
-  },
-  {
-    category: "standard",
-    name: "WALLBOX",
-    imageRef:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WallBOX-PRODUCT_2024.png?v=1712856179",
-    fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WallBOX_Assembly_Guide.pdf?v=1715799748",
     alt: "Assembly Guide",
   },
   {
@@ -235,7 +235,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC20G.png?v=1715872621",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1715873212",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
     alt: "Assembly Guide",
   },
 
@@ -325,7 +325,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC25DOI1S.png?v=1715872695",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1715873212",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
     alt: "Assembly Guide",
   },
 
@@ -543,7 +543,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC30DOJ2S.png?v=1715872723",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1715873212",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
     alt: "Assembly Guide",
   },
 
@@ -561,7 +561,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC35K2S.png?v=1715872757",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1715873212",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
     alt: "Assembly Guide",
   },
 
@@ -579,7 +579,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC40DOL3S.png?v=1715872779",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1715873212",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
     alt: "Assembly Guide",
   },
 
@@ -597,7 +597,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC50DON4S.png?v=1715872801",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1715873212",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
     alt: "Assembly Guide",
   },
 
@@ -615,7 +615,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC60-DO-P5AS_AJAR.png?v=1715872868",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1715873212",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
     alt: "Assembly Guide",
   },
 ];
