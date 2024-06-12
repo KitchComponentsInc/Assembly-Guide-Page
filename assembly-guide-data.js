@@ -442,7 +442,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30_Recyclage-J_AJAR.png?v=1712857329",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BR30J.pdf?v=1709315797",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BR30J.pdf?v=1718220922",
     alt: "Assembly Guide",
   },
   {
@@ -544,6 +544,15 @@ let assemblyGuides = [
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC30DOJ2S.png?v=1715872723",
     fileUrl:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
+    alt: "Assembly Guide",
+  },
+  {
+    category: "30-high",
+    name: "BPO302DRJ",
+    imageRef:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX_30in_Twin_AJAR.png?v=1718221289",
+    fileUrl:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BPO302DRJ.pdf?v=1718220240",
     alt: "Assembly Guide",
   },
 
