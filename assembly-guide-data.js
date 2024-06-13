@@ -552,7 +552,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX_30in_Twin_AJAR.png?v=1718221289",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BPO302DRJ.pdf?v=1718220240",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BPO302DRJ.pdf?v=1718300312",
     alt: "Assembly Guide",
   },
 
