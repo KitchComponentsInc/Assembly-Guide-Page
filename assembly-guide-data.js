@@ -456,15 +456,6 @@ let assemblyGuides = [
   },
   {
     category: "30-high",
-    name: "BBC30DOJ & BBC30DOJS",
-    imageRef:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BBC-PO_LHS_AJAR.png?v=1712857443",
-    fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BBC30DOJ_BBC30DOJS.pdf?v=1712783675",
-    alt: "Assembly Guide",
-  },
-  {
-    category: "30-high",
     name: "B302DRGC",
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/B302DRGC.png?v=1712857477",
@@ -517,17 +508,6 @@ let assemblyGuides = [
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BF30DO2ID_BF302DO2ID.pdf?v=1713974048",
     alt: "Assembly Guide",
   },
-  /* Contains QR CODE
-    {
-      category: "30-high",
-      name: "BBC30DOJ & BBC30DOJS",
-      imageRef:
-        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BBC-PO_LHS_AJAR.png?v=1712857443",
-      fileUrl:
-        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BBC30DOJ_BBC30DOJS.pdf?v=1715711835",
-        alt: "Assembly Guide",
-    },
-*/
   {
     category: "30-high",
     name: "BBC30DOJ & BBC30DOJS",
