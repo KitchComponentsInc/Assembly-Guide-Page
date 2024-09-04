@@ -33,7 +33,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX-PRODUCT_2024.png?v=1712856218",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX_Assembly_Guide.pdf?v=1713366855",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/DrawerBOX.pdf?v=1725472718",
     alt: "Assembly Guide",
   },
   {
@@ -42,7 +42,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_DrawerBOX-PRODUCT_2024.png?v=1712857847",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_DrawerBOX_Assembly_Guide.pdf?v=1713366803",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_DrawerBOX.pdf?v=1725472465",
     alt: "Assembly Guide",
   },
   {
@@ -60,7 +60,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Sink_DrawerBOX_2024.png?v=1716496144",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Sink_DrawerBOX.pdf?v=1716993087",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Sink_DrawerBOX.pdf?v=1725472409",
     alt: "Assembly Guide",
   },
   {
@@ -69,9 +69,24 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Sink_Inner_DrawerBOX_2024.png?v=1716932959",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_Sink_DrawerBOX.pdf?v=1716993087",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_Sink_DrawerBOX.pdf?v=1725472350",
     alt: "Assembly Guide",
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /*  ------------------ INSTALLATION GUIDES ------------------ */
   {
@@ -175,6 +190,15 @@ let assemblyGuides = [
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WHDO10C_WHDO15E_WHDO20GS.pdf?v=1714078259",
     alt: "Assembly Guide",
   },
+
+
+
+
+
+
+
+  /*  ------------------ 18" HEIGHT CONFIGURATIONS ------------------ */
+
 
 
 
@@ -442,7 +466,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX-30_Recyclage-J_AJAR.png?v=1712857329",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BR30J.pdf?v=1718220922",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BR30J.pdf?v=1725472277",
     alt: "Assembly Guide",
   },
   {
@@ -532,7 +556,7 @@ let assemblyGuides = [
     imageRef:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BaseBOX_30in_Twin_AJAR.png?v=1718221289",
     fileUrl:
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BPO302DRJ.pdf?v=1718300312",
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/BPO302DRJ.pdf?v=1725472121",
     alt: "Assembly Guide",
   },
 
