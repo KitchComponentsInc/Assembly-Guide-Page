@@ -72,6 +72,7 @@ let assemblyGuides = [
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Inner_Sink_DrawerBOX.pdf?v=1725472350",
     alt: "Assembly Guide",
   },
+ 
 
 
 
@@ -153,6 +154,15 @@ let assemblyGuides = [
     fileUrl:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Door_Configurations_v2.pdf?v=1715713570",
     alt: "Installation Guide",
+  }, 
+  {
+    category: "installation",
+    name: "Electrical Disconnect Installation",
+    imageRef:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Electrical_Disconnect_Kit.png?v=1725566297",
+    fileUrl:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Electrical_Disconnect_Installation.pdf?v=1725479911",
+    alt: "Assembly Guide",
   },
 
 
@@ -260,6 +270,15 @@ let assemblyGuides = [
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WBC20G.png?v=1715872621",
     fileUrl:
       "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Wall_Blind_Corner_Configurations.pdf?v=1717693921",
+    alt: "Assembly Guide",
+  },
+  {
+    category: "20-high",
+    name: "WAG20",
+    imageRef:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WAG20.png?v=1725565940",
+    fileUrl:
+      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/WAG20.pdf?v=1725565993",
     alt: "Assembly Guide",
   },
 
