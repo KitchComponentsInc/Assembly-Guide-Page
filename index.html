@@ -298,152 +298,155 @@
     </template>
   </div>
 </section>
-<script src="https://cdn.shopify.com/s/files/1/0639/8686/0263/files/assembly-guide-data_a2789b4b-2181-42f1-8056-7ff253b0a05f.js?v=1725566401"></script>
-<!-- <script src="assembly-guide-data.js"></script> -->
 <script defer="">
-  const assemblyGuideCardTemplate = document.querySelector(
-    "[data-assembly-guide-template]"
-  );
-  const standardAssemblyGuideCardContainer = document.querySelector(
-    "[data-standard-assembly-guide-cards-container]"
-  );
-  const standardInstallationGuideCardContainer = document.querySelector(
-    "[data-standard-installation-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer10High = document.querySelector(
-    "[data-10-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer15High = document.querySelector(
-    "[data-15-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer18High = document.querySelector(
-    "[data-18-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer20High = document.querySelector(
-    "[data-20-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer25High = document.querySelector(
-    "[data-25-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer30High = document.querySelector(
-    "[data-30-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer35High = document.querySelector(
-    "[data-35-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer40High = document.querySelector(
-    "[data-40-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer50High = document.querySelector(
-    "[data-50-high-assembly-guide-cards-container]"
-  );
-  const assemblyGuideCardContainer60High = document.querySelector(
-    "[data-60-high-assembly-guide-cards-container]"
-  );
-  const searchInput = document.querySelector("[data-search]");
+  document.addEventListener("DOMContentLoaded", function () {
+    const assemblyGuideCardTemplate = document.querySelector(
+      "[data-assembly-guide-template]"
+    );
+    const standardAssemblyGuideCardContainer = document.querySelector(
+      "[data-standard-assembly-guide-cards-container]"
+    );
+    const standardInstallationGuideCardContainer = document.querySelector(
+      "[data-standard-installation-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer10High = document.querySelector(
+      "[data-10-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer15High = document.querySelector(
+      "[data-15-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer18High = document.querySelector(
+      "[data-18-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer20High = document.querySelector(
+      "[data-20-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer25High = document.querySelector(
+      "[data-25-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer30High = document.querySelector(
+      "[data-30-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer35High = document.querySelector(
+      "[data-35-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer40High = document.querySelector(
+      "[data-40-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer50High = document.querySelector(
+      "[data-50-high-assembly-guide-cards-container]"
+    );
+    const assemblyGuideCardContainer60High = document.querySelector(
+      "[data-60-high-assembly-guide-cards-container]"
+    );
+    const searchInput = document.querySelector("[data-search]");
 
-  function checkCategoryVisibility(categoryContainer) {
-    const cards = categoryContainer.querySelectorAll(".card:not(.hide)");
-    const categoryDiv = categoryContainer.parentElement;
+    function checkCategoryVisibility(categoryContainer) {
+      const cards = categoryContainer.querySelectorAll(".card:not(.hide)");
+      const categoryDiv = categoryContainer.parentElement;
 
-    if (cards.length === 0) {
-      categoryDiv.classList.add("hide");
-    } else {
-      categoryDiv.classList.remove("hide");
-    }
-  }
-
-  searchInput.addEventListener("input", (e) => {
-    const value = e.target.value.toLowerCase();
-    assemblyGuides.forEach((guide) => {
-      const isVisible = guide.name.toLowerCase().includes(value);
-      if (guide.card) {
-        // Check if guide.card is defined
-        guide.card.classList.toggle("hide", !isVisible);
+      if (cards.length === 0) {
+        categoryDiv.classList.add("hide");
+      } else {
+        categoryDiv.classList.remove("hide");
       }
+    }
+
+    searchInput.addEventListener("input", (e) => {
+      const value = e.target.value.toLowerCase();
+      assemblyGuides.forEach((guide) => {
+        const isVisible = guide.name.toLowerCase().includes(value);
+        if (guide.card) {
+          // Check if guide.card is defined
+          guide.card.classList.toggle("hide", !isVisible);
+        }
+      });
+
+      // Check visibility for each category
+      checkCategoryVisibility(standardAssemblyGuideCardContainer);
+      checkCategoryVisibility(assemblyGuideCardContainer10High);
+      checkCategoryVisibility(assemblyGuideCardContainer15High);
+      checkCategoryVisibility(assemblyGuideCardContainer18High);
+      checkCategoryVisibility(assemblyGuideCardContainer20High);
+      checkCategoryVisibility(assemblyGuideCardContainer25High);
+      checkCategoryVisibility(assemblyGuideCardContainer30High);
+      checkCategoryVisibility(assemblyGuideCardContainer35High);
+      checkCategoryVisibility(assemblyGuideCardContainer40High);
+      checkCategoryVisibility(assemblyGuideCardContainer50High);
+      checkCategoryVisibility(assemblyGuideCardContainer60High);
+      checkCategoryVisibility(standardInstallationGuideCardContainer);
     });
 
-    // Check visibility for each category
-    checkCategoryVisibility(standardAssemblyGuideCardContainer);
-    checkCategoryVisibility(assemblyGuideCardContainer10High);
-    checkCategoryVisibility(assemblyGuideCardContainer15High);
-    checkCategoryVisibility(assemblyGuideCardContainer18High);
-    checkCategoryVisibility(assemblyGuideCardContainer20High);
-    checkCategoryVisibility(assemblyGuideCardContainer25High);
-    checkCategoryVisibility(assemblyGuideCardContainer30High);
-    checkCategoryVisibility(assemblyGuideCardContainer35High);
-    checkCategoryVisibility(assemblyGuideCardContainer40High);
-    checkCategoryVisibility(assemblyGuideCardContainer50High);
-    checkCategoryVisibility(assemblyGuideCardContainer60High);
-    checkCategoryVisibility(standardInstallationGuideCardContainer);
-  });
+    assemblyGuides.forEach((guide) => {
+      var fileNameWrapper = document.createElement("div");
+      fileNameWrapper.className = "file-name-wrapper";
+      var fileName = document.createElement("h4");
+      var imageRef = document.createElement("img");
 
-  assemblyGuides.forEach((guide) => {
-    var fileNameWrapper = document.createElement("div");
-    fileNameWrapper.className = "file-name-wrapper";
-    var fileName = document.createElement("h4");
-    var imageRef = document.createElement("img");
+      var pdfFile = document.createElement("a");
+      var downloadIcon = document.createElement("img");
 
-    var pdfFile = document.createElement("a");
-    var downloadIcon = document.createElement("img");
+      const card =
+        assemblyGuideCardTemplate.content.cloneNode(true).children[0];
+      const enlargeImageWrapper = card.querySelector(
+        "[data-enlarge-image-wrapper]"
+      );
+      const assemblyGuideHeader = card.querySelector(
+        "[data-assembly-guide-header]"
+      );
+      const assemblyGuideBody = card.querySelector(
+        "[data-assembly-guide-body]"
+      );
 
-    const card = assemblyGuideCardTemplate.content.cloneNode(true).children[0];
-    const enlargeImageWrapper = card.querySelector(
-      "[data-enlarge-image-wrapper]"
-    );
-    const assemblyGuideHeader = card.querySelector(
-      "[data-assembly-guide-header]"
-    );
-    const assemblyGuideBody = card.querySelector("[data-assembly-guide-body]");
+      imageRef.src = guide.imageRef;
+      imageRef.setAttribute("alt", `${guide.name} ${guide.alt}`);
+      imageRef.setAttribute(
+        "onclick",
+        `window.open('${guide.imageRef}', '_blank')`
+      );
+      imageRef.setAttribute("title", `Preview ${guide.name} in new tab`);
+      fileName.textContent = guide.name;
+      assemblyGuideHeader.appendChild(fileNameWrapper);
+      fileNameWrapper.appendChild(imageRef);
+      fileNameWrapper.appendChild(fileName);
 
-    imageRef.src = guide.imageRef;
-    imageRef.setAttribute("alt", `${guide.name} ${guide.alt}`);
-    imageRef.setAttribute(
-      "onclick",
-      `window.open('${guide.imageRef}', '_blank')`
-    );
-    imageRef.setAttribute("title", `Preview ${guide.name} in new tab`);
-    fileName.textContent = guide.name;
-    assemblyGuideHeader.appendChild(fileNameWrapper);
-    fileNameWrapper.appendChild(imageRef);
-    fileNameWrapper.appendChild(fileName);
+      pdfFile.setAttribute("href", `${guide.fileUrl}`);
+      pdfFile.setAttribute("target", "_blank");
+      pdfFile.setAttribute("class", "download-icon");
 
-    pdfFile.setAttribute("href", `${guide.fileUrl}`);
-    pdfFile.setAttribute("target", "_blank");
-    pdfFile.setAttribute("class", "download-icon");
+      downloadIcon.src =
+        "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Download-Icon.png?v=1712692326";
 
-    downloadIcon.src =
-      "https://cdn.shopify.com/s/files/1/0639/8686/0263/files/Download-Icon.png?v=1712692326";
+      pdfFile.appendChild(downloadIcon);
+      assemblyGuideBody.appendChild(pdfFile);
 
-    pdfFile.appendChild(downloadIcon);
-    assemblyGuideBody.appendChild(pdfFile);
+      if (guide.category === "standard") {
+        standardAssemblyGuideCardContainer.append(card);
+      } else if (guide.category === "10-high") {
+        assemblyGuideCardContainer10High.append(card);
+      } else if (guide.category === "15-high") {
+        assemblyGuideCardContainer15High.append(card);
+      } else if (guide.category === "18-high") {
+        assemblyGuideCardContainer18High.append(card);
+      } else if (guide.category === "20-high") {
+        assemblyGuideCardContainer20High.append(card);
+      } else if (guide.category === "25-high") {
+        assemblyGuideCardContainer25High.append(card);
+      } else if (guide.category === "30-high") {
+        assemblyGuideCardContainer30High.append(card);
+      } else if (guide.category === "35-high") {
+        assemblyGuideCardContainer35High.append(card);
+      } else if (guide.category === "40-high") {
+        assemblyGuideCardContainer40High.append(card);
+      } else if (guide.category === "50-high") {
+        assemblyGuideCardContainer50High.append(card);
+      } else if (guide.category === "60-high") {
+        assemblyGuideCardContainer60High.append(card);
+      } else if (guide.category === "installation") {
+        standardInstallationGuideCardContainer.append(card);
+      }
 
-    if (guide.category === "standard") {
-      standardAssemblyGuideCardContainer.append(card);
-    } else if (guide.category === "10-high") {
-      assemblyGuideCardContainer10High.append(card);
-    } else if (guide.category === "15-high") {
-      assemblyGuideCardContainer15High.append(card);
-    } else if (guide.category === "18-high") {
-      assemblyGuideCardContainer18High.append(card);
-    } else if (guide.category === "20-high") {
-      assemblyGuideCardContainer20High.append(card);
-    } else if (guide.category === "25-high") {
-      assemblyGuideCardContainer25High.append(card);
-    } else if (guide.category === "30-high") {
-      assemblyGuideCardContainer30High.append(card);
-    } else if (guide.category === "35-high") {
-      assemblyGuideCardContainer35High.append(card);
-    } else if (guide.category === "40-high") {
-      assemblyGuideCardContainer40High.append(card);
-    } else if (guide.category === "50-high") {
-      assemblyGuideCardContainer50High.append(card);
-    } else if (guide.category === "60-high") {
-      assemblyGuideCardContainer60High.append(card);
-    } else if (guide.category === "installation") {
-      standardInstallationGuideCardContainer.append(card);
-    }
-
-    guide.card = card;
+      guide.card = card;
+    });
   });
 </script>
