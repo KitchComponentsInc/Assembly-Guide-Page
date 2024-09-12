@@ -227,6 +227,13 @@
       ></div>
     </div>
     <div class="category">
+      <h3 id="18-in-high">18" Height Configurations</h3>
+      <div
+        data-18-high-assembly-guide-cards-container=""
+        class="assembly-guide-cards"
+      ></div>
+    </div>
+    <div class="category">
       <h3 id="20-in-high">20" Height Configurations</h3>
       <div
         data-20-high-assembly-guide-cards-container=""
@@ -308,6 +315,9 @@
     const assemblyGuideCardContainer15High = document.querySelector(
       "[data-15-high-assembly-guide-cards-container]"
     );
+    const assemblyGuideCardContainer18High = document.querySelector(
+      "[data-18-high-assembly-guide-cards-container]"
+    );
     const assemblyGuideCardContainer20High = document.querySelector(
       "[data-20-high-assembly-guide-cards-container]"
     );
@@ -356,6 +366,7 @@
       checkCategoryVisibility(standardAssemblyGuideCardContainer);
       checkCategoryVisibility(assemblyGuideCardContainer10High);
       checkCategoryVisibility(assemblyGuideCardContainer15High);
+      checkCategoryVisibility(assemblyGuideCardContainer18High);
       checkCategoryVisibility(assemblyGuideCardContainer20High);
       checkCategoryVisibility(assemblyGuideCardContainer25High);
       checkCategoryVisibility(assemblyGuideCardContainer30High);
@@ -415,6 +426,8 @@
         assemblyGuideCardContainer10High.append(card);
       } else if (guide.category === "15-high") {
         assemblyGuideCardContainer15High.append(card);
+      } else if (guide.category === "18-high") {
+        assemblyGuideCardContainer18High.append(card);
       } else if (guide.category === "20-high") {
         assemblyGuideCardContainer20High.append(card);
       } else if (guide.category === "25-high") {
