@@ -282,13 +282,6 @@
         class="assembly-guide-cards"
       ></div>
     </div>
-    <div class="category">
-      <h3 id="70-in-high">70" Height Configurations</h3>
-      <div
-        data-70-high-assembly-guide-cards-container=""
-        class="assembly-guide-cards"
-      ></div>
-    </div>
     <template data-assembly-guide-template="">
       <div class="card">
         <div
@@ -346,9 +339,6 @@
     const assemblyGuideCardContainer60High = document.querySelector(
       "[data-60-high-assembly-guide-cards-container]"
     );
-    const assemblyGuideCardContainer70High = document.querySelector(
-      "[data-70-high-assembly-guide-cards-container]"
-    );
     const searchInput = document.querySelector("[data-search]");
 
     function checkCategoryVisibility(categoryContainer) {
@@ -384,7 +374,6 @@
       checkCategoryVisibility(assemblyGuideCardContainer40High);
       checkCategoryVisibility(assemblyGuideCardContainer50High);
       checkCategoryVisibility(assemblyGuideCardContainer60High);
-      checkCategoryVisibility(assemblyGuideCardContainer70High);
       checkCategoryVisibility(standardInstallationGuideCardContainer);
     });
 
@@ -453,8 +442,6 @@
         assemblyGuideCardContainer50High.append(card);
       } else if (guide.category === "60-high") {
         assemblyGuideCardContainer60High.append(card);
-      } else if (guide.category === "70-high") {
-        assemblyGuideCardContainer70High.append(card);
       } else if (guide.category === "installation") {
         standardInstallationGuideCardContainer.append(card);
       }
